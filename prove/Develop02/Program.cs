@@ -1,12 +1,11 @@
 using System;
 using System.Net.Quic;
-//TODO: Creativity Section (maybe save and load from JSON)
-//Maybe add a time and time between last entry
+//Extra Creativity: Created an option in the menu to freewrite, which does not initiate a prompt. The _prompt property in the Entry object is saved as "Freewrite".
 class Program
 {
     static void Main(string[] args)
     {
-        const int QUIT = 5;
+        const int QUIT = 6;
         string userResponse = "";
         Menu newMenu = new Menu();
         Journal newJournal = new Journal();
@@ -46,8 +45,28 @@ class Program
                     newJournal.AddEntry(newEntry);
 
                     break;
-                //Save
+                //Freewrite
                 case 2:
+                    //Get user response
+                    Console.WriteLine("Write to your heart's content: ");
+                    string freewrite = Console.ReadLine();
+
+                    //Get current date
+                    DateTime currentFreewriteTime = DateTime.Now;
+                    string freewriteDateText = currentFreewriteTime.ToShortDateString();
+
+                    //Create new entry
+                    Entry newFreewriteEntry = new Entry();
+                    newFreewriteEntry._prompt = "Freewrite";
+                    newFreewriteEntry._response = freewrite;
+                    newFreewriteEntry._date = freewriteDateText;
+
+                    //Add to the journal
+                    newJournal.AddEntry(newFreewriteEntry);
+
+                    break;
+                //Save
+                case 3:
                     //Get the fileName
                     Console.WriteLine("Please enter a file to save to: ");
                     string saveFileName = Console.ReadLine();
@@ -58,7 +77,7 @@ class Program
 
                     break;
                 //Load
-                case 3:
+                case 4:
                     //Get file name
                     Console.WriteLine("Please enter a file to load: ");
                     string loadFileName = Console.ReadLine();
@@ -69,7 +88,7 @@ class Program
 
                     break;
                 //Display
-                case 4:
+                case 5:
                     newJournal.DisplayAll();
 
                     break;

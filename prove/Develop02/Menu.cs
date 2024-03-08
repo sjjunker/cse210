@@ -5,11 +5,12 @@ public class Menu
 
     public Menu()
     {
-        this._menu.Add("1. Start a New Entry");
-        this._menu.Add("2. Save Journal");
-        this._menu.Add("3. Load Journal");
-        this._menu.Add("4. View Your Journal");
-        this._menu.Add("5. Quit");
+        this._menu.Add("1. Respond to a Prompt");
+        this._menu.Add("2. Freewrite");
+        this._menu.Add("3. Save Journal");
+        this._menu.Add("4. Load Journal");
+        this._menu.Add("5. View Your Journal");
+        this._menu.Add("6. Quit");
     }
 
     public void Display()
