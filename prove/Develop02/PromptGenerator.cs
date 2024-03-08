@@ -1,6 +1,6 @@
 public class PromptGenerator
 {
-    public List<string> _prompts = new List<string> 
+    public List<string> _prompts = new List<string>
     {
         "How did you see God's hand in your life today?",
         "What did you think about when you first woke up this morning?",
@@ -14,11 +14,11 @@ public class PromptGenerator
     };
 
     //Get a random prompt from the list of prompts
-    public string GetPrompt() 
+    public string GetPrompt()
     {
         System.Random random = new Random();
-        int index = random.Next(0, _prompts.Count-1);
+        int index = random.Next(0, _prompts.Count - 1);
 
-        return  _prompts[index];
+        return _prompts[index];
     }
 }

@@ -22,7 +22,7 @@ class Program
             Console.WriteLine();
 
             //Respond to the user's choice
-            switch(newMenu._selection)
+            switch (newMenu._selection)
             {
                 //Add
                 case 1:
@@ -98,6 +98,6 @@ class Program
 
             Console.WriteLine();
 
-        } while(newMenu._selection != QUIT);
+        } while (newMenu._selection != QUIT);
     }
 }

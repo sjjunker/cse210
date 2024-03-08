@@ -1,16 +1,16 @@
 using System.IO;
 
-public class Journal 
+public class Journal
 {
     List<Entry> _entries = new List<Entry>();
 
     //Methods
-    public void AddEntry(Entry entry) 
+    public void AddEntry(Entry entry)
     {
         _entries.Add(entry);
     }
 
-    public void DisplayAll() 
+    public void DisplayAll()
     {
         foreach (Entry entry in _entries)
         {
@@ -37,7 +37,7 @@ public class Journal
 
         //Load from file
         string[] lines = System.IO.File.ReadAllLines(fileName);
-        
+
         foreach (string line in lines)
         {
             string[] parts = line.Split("|");
