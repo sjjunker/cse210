@@ -76,11 +76,12 @@ public class Activity
 
     public void ShowCountDown(int seconds)
     {
+
         for(int count = 5; count > 0; count--)
         {
-            Console.WriteLine(count);
+            Console.Write(count);
             Thread.Sleep(seconds);
-            Console.WriteLine("\b \b");
+            Console.Write("\b \b");
         }
     }
 }

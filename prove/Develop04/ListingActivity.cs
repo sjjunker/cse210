@@ -1,29 +1,21 @@
 public class ListingActivity: Activity 
 {
     private int _count;
-    private List<string> _prompts;
+    private List<string> _prompts = new List<string>();
 
     public ListingActivity()
     {
         _name = "Listing Activity";
         _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
 
-        LoadPromptsFromFile("Prompts.txt");
-    }
-
-    //Load prompts
-    private void LoadPromptsFromFile(string fileName)
-    {
-        //Make sure _prompts is empty
-        _prompts.Clear();
-
-        //Load the file
-        string[] lines = System.IO.File.ReadAllLines(fileName);
-
-        //Add each line to the _prompts list
-        foreach(string line in lines) {
-            _prompts.Add(line);
-        }
+        _prompts.Add("Who are people that you appreciate?");
+        _prompts.Add("What are personal strengths of yours?");
+        _prompts.Add("Who are people that you have helped this week?");
+        _prompts.Add("When have you felt the Holy Ghost this month?");
+        _prompts.Add("Who are some of your personal heroes?");
+        _prompts.Add("What are some healthy foods you ate this week?");
+        _prompts.Add("What are some things you learned this year?");
+        _prompts.Add("Who have you spoken kind words to this month?");
     }
 
     //Run the activity
@@ -34,18 +26,12 @@ public class ListingActivity: Activity
         ShowCountDown(5);
 
         //Begin Activity
-        DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(_duration);
         List<string> userInput = new List<string>();
-
-        while(DateTime.Now < endTime)
-        {
-            userInput = GetListFromUser();
-        }
+        userInput = GetListFromUser();
 
         //display count
         _count = userInput.Count;
-        Console.WriteLine($"Youu entered {_count} items.");
+        Console.WriteLine($"You entered {_count} items.");
         
         DisplayEndingMessage();
     }
@@ -60,17 +46,18 @@ public class ListingActivity: Activity
     }
 
     //Get the user's list
-    public List<string> GetListFromUser()
+    private List<string> GetListFromUser()
     {
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
         List<string> responses = new List<string>();
-        string response = "";
 
         Console.WriteLine("Please list your items: ");
         do
         {
-            response = Console.ReadLine();
+            string response = Console.ReadLine();
             responses.Add(response);
-        } while(response != "");
+        } while(DateTime.Now < endTime);
 
         return responses;
     }
