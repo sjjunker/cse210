@@ -2,7 +2,8 @@ using System;
 using System.Collections;
 using System.Linq.Expressions;
 /*Extra creativity:
---Used a try catch block in the starting message in Activity base class
+--Used a try catch block to handle user input both in the 
+  starting message in Activity base class
   and in Program.cs when getting the user's menu choice.
 */
 
