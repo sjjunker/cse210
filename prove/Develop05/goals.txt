@@ -1,0 +1,2 @@
+CheckListGoal|Temple|Visit the temple|25|3|100|1
+25
