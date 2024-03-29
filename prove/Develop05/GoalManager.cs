@@ -4,12 +4,26 @@ public class GoalManager
 {
     private List<Goal> _goals;
     private int _score;
+    private List<Levels> _levels;
 
     //Constructor
     public GoalManager()
     {
         _goals = new List<Goal>();
         _score = 0;
+        _levels = new List<Levels>();
+
+        //Create levels
+        Levels newLevel1 = new Levels("Minnow", 0);
+        _levels.Add(newLevel1);
+        Levels newLevel2 = new Levels("Catfish Bait", 10);
+        _levels.Add(newLevel2);
+        Levels newLevel3 = new Levels("Painted Turtle", 50);
+        _levels.Add(newLevel3);
+        Levels newLevel4 = new Levels("Sunbathing Alligator", 150);
+        _levels.Add(newLevel4);
+        Levels newLevel5 = new Levels("Crocodile Hunter", 500);
+        _levels.Add(newLevel5);
     }
 
     //Methods
@@ -28,6 +42,7 @@ public class GoalManager
             Console.WriteLine("5 - Record Event");
             Console.WriteLine("6 - Quit");
             Console.WriteLine($"Your current score is {_score}");
+            Console.WriteLine($"Level: {DetermineLevel(_score)}");
 
             menuChoice = int.Parse(Console.ReadLine());
 
@@ -207,5 +222,19 @@ public class GoalManager
                 _score = int.Parse(parts[0]);
             }
         }
+    }
+    public string DetermineLevel(int score) 
+    {
+        string currentLevel = "";
+
+        foreach(Levels level in _levels)
+        {
+            if (score >= level.GetPointsRequired())
+            {
+                currentLevel = level.GetName();
+            }
+        }
+        
+        return currentLevel;
     }
 }
