@@ -27,6 +27,7 @@ public class Menu
             Console.WriteLine("6 - Quit");
 
             _userMenuChoice = int.Parse(Console.ReadLine());
+            PerformSelection(_userMenuChoice);
         }
     }
 
@@ -40,6 +41,7 @@ public class Menu
                 Console.WriteLine("How many rows would you like in your garden?");
                 int plotSize = int.Parse(Console.ReadLine());
                 newPlot.SetPlotLength(plotSize);
+                Console.WriteLine($"Your plot is 4 feet wide and {newPlot.GetPlotLength()} feet long.");
 
                 break;
 

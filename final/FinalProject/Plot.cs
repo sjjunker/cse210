@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 public class Plot
 {
-    private float _length;
+    private int _length;
     private bool _isFull;
     private List<Plant> _plants = new List<Plant>();
 
@@ -26,6 +26,11 @@ public class Plot
     public void SetPlotLength(int length)
     {
         _length = length;
+    }
+
+    public int GetPlotLength()
+    {
+        return _length;
     }
 
     public bool IsFull()
