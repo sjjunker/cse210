@@ -20,7 +20,7 @@ public class Open
         {
             string[] parts = line.Split("|");
 
-            if (parts[0] == "Annual")
+            if (parts[0] == "annual")
             {
                 Annual newAnnual = new Annual(parts[1], int.Parse(parts[2]), parts[3], parts[4]);
                 _plants.Add(newAnnual);

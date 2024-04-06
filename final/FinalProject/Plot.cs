@@ -3,13 +3,11 @@ using System.ComponentModel.DataAnnotations;
 public class Plot
 {
     private int _length;
-    private bool _isFull;
     private List<Plant> _plants = new List<Plant>();
 
     public Plot()
     {
         _length = 4;
-        _isFull = false;
     }
 
     public List<Plant> GetPlants()
@@ -46,7 +44,7 @@ public class Plot
 
     public void AddPlant(Plant plant)
     {
-        if (!_isFull)
+        if (!IsFull())
         {
             _plants.Add(plant);
             DisplayPlot();
@@ -58,29 +56,34 @@ public class Plot
 
     public void RemovePlant(string plantName)
     {
+        //Get index of plant to remove (so array isn't changed during loop)
+        int index = 0;
         for (int i = 0; i < _plants.Count(); i++)
         {
             if (_plants[i].GetName().ToLower() == plantName.ToLower())
             {
-                _plants.Remove(_plants[i]);
-                DisplayPlot();
+                index = i;
             } else
             {
                 Console.WriteLine("Could not remove. Plant is not in the plot.");
             }
         }
+
+        //remove the plant
+        _plants.Remove(_plants[index]);
+        DisplayPlot();
     }
 
     //TODO: Format string style plot display
-    public string DisplayPlot()
+    public void DisplayPlot()
     {
-        string plotString = "";
+        
 
         foreach(Plant plant in _plants)
         {
-            plotString = plotString + "Place holder for displaying the plot.\n";
+            Console.WriteLine(plant.GetName());
         }
 
-        return plotString;
+        
     }
 }

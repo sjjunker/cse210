@@ -99,6 +99,7 @@ public class Menu
 
                 Open newOpen = new Open();
                 newPlot.SetPlants(newOpen.OpenPlants());
+                newPlot.DisplayPlot();
 
                 break;
 
