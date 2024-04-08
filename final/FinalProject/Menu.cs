@@ -19,7 +19,7 @@ public class Menu
         while (_userMenuChoice != _QUIT)
         {
             Console.WriteLine("\nPlease select from the menu (enter 1-6): \n");
-            Console.WriteLine("1 - Create New Garden");
+            Console.WriteLine("1 - Choose Garden Length");
             Console.WriteLine("2 - Add Plant");
             Console.WriteLine("3 - Remove Plant");
             Console.WriteLine("4 - Save to File");
