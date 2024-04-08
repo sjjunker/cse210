@@ -4,9 +4,9 @@ using System.Reflection.Metadata.Ecma335;
 
 public class Menu
 {
-    const int _QUIT = 6;
-    int _userMenuChoice = 0;
-    Plot newPlot;
+    private const int _QUIT = 6;
+    private int _userMenuChoice = 0;
+    private Plot newPlot;
 
     public Menu()
     {
@@ -67,7 +67,8 @@ public class Menu
                     Annual newAnnual = new Annual(plantingSeason, daysToHarvest, name, description);
 
                     newPlot.AddPlant(newAnnual);
-                } else //create new perennial
+                }
+                else //create new perennial
                 {
                     Console.WriteLine("What season is it harvested in?");
                     string harvestSeason = Console.ReadLine();
@@ -108,5 +109,5 @@ public class Menu
                 _userMenuChoice = _QUIT;
                 break;
         }
-    }  
+    }
 }

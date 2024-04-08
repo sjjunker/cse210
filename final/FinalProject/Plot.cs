@@ -31,12 +31,13 @@ public class Plot
         return _length;
     }
 
-    public bool IsFull()
+    private bool IsFull()
     {
-        if(_plants.Count() == _length)
+        if (_plants.Count() == _length)
         {
             return true;
-        } else
+        }
+        else
         {
             return false;
         }
@@ -48,7 +49,8 @@ public class Plot
         {
             _plants.Add(plant);
             DisplayPlot();
-        } else
+        }
+        else
         {
             Console.WriteLine("Plot is full. Cannot add anymore plants.");
         }
@@ -63,7 +65,8 @@ public class Plot
             if (_plants[i].GetName().ToLower() == plantName.ToLower())
             {
                 index = i;
-            } else
+            }
+            else
             {
                 Console.WriteLine("Could not remove. Plant is not in the plot.");
                 break;
@@ -71,7 +74,8 @@ public class Plot
         }
 
         //remove the plant
-        if (index != -1) {
+        if (index != -1)
+        {
             _plants.Remove(_plants[index]);
             DisplayPlot();
         }
@@ -82,12 +86,12 @@ public class Plot
     {
         Console.WriteLine("\nYour plot:\n");
 
-        foreach(Plant plant in _plants)
+        foreach (Plant plant in _plants)
         {
             Console.WriteLine("-------------------------------------");
             Console.WriteLine(String.Format(("| {0, 4}   | {1, 4}   | {2, 4}   | {3, 4}   |"), plant.GetInitial().ToUpper(), plant.GetInitial().ToUpper(), plant.GetInitial().ToUpper(), plant.GetInitial().ToUpper()));
         }
         Console.WriteLine("-------------------------------------");
-        
+
     }
 }

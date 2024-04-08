@@ -1,8 +1,6 @@
-public class Save 
+public class Save
 {
-    private string _fileName;
-
-    public Save(){}
+    public Save() { }
 
     private string GetFileName()
     {
@@ -14,7 +12,7 @@ public class Save
     {
         using (StreamWriter outputFile = new StreamWriter(GetFileName()))
         {
-            foreach(Plant plant in plants)
+            foreach (Plant plant in plants)
             {
                 outputFile.WriteLine(plant.PlantString());
             }

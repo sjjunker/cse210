@@ -1,9 +1,9 @@
-public class Perennial: Plant
+public class Perennial : Plant
 {
     private string _harvestSeason;
     private int _yearLifeSpan;
 
-    public Perennial(string name, string description, string harvestSeason, int yearLifeSpan): base(name, description)
+    public Perennial(string name, string description, string harvestSeason, int yearLifeSpan) : base(name, description)
     {
         _harvestSeason = harvestSeason;
         _yearLifeSpan = yearLifeSpan;

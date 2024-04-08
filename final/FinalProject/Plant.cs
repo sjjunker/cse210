@@ -12,12 +12,12 @@ public abstract class Plant
     }
 
     public abstract string DisplayPlant();
-    public string GetInitial ()
+    public string GetInitial()
     {
         return _initial;
     }
 
-    public string GetName ()
+    public string GetName()
     {
         return _name;
     }

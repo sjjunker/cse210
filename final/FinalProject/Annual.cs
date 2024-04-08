@@ -1,9 +1,9 @@
-public class Annual: Plant 
+public class Annual : Plant
 {
     private string _plantingSeason;
     private int _daysToHarvest;
 
-    public Annual(string plantingSeason, int daysToHarvest, string name, string description): base(name, description)
+    public Annual(string plantingSeason, int daysToHarvest, string name, string description) : base(name, description)
     {
         _plantingSeason = plantingSeason;
         _daysToHarvest = daysToHarvest;
