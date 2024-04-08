@@ -1,2 +1,3 @@
 Perennial|broccoli|green thing|b|fall|120
 Perennial|asparagus|green thing 2|a|spring|8
+Annual|tomato|red and juicy|t|spring|60

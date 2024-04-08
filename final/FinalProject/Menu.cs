@@ -18,7 +18,7 @@ public class Menu
     {
         while (_userMenuChoice != _QUIT)
         {
-            Console.WriteLine("Please select from the menu (enter 1-6): ");
+            Console.WriteLine("\nPlease select from the menu (enter 1-6): \n");
             Console.WriteLine("1 - Create New Garden");
             Console.WriteLine("2 - Add Plant");
             Console.WriteLine("3 - Remove Plant");
@@ -38,16 +38,16 @@ public class Menu
         {
             case 1: //Choose plot length
 
-                Console.WriteLine("How many rows would you like in your garden?");
+                Console.WriteLine("\nHow many rows would you like in your garden?");
                 int plotSize = int.Parse(Console.ReadLine());
                 newPlot.SetPlotLength(plotSize);
-                Console.WriteLine($"Your plot is 4 feet wide and {newPlot.GetPlotLength()} feet long.");
+                Console.WriteLine($"\nYour plot is 4 feet wide and {newPlot.GetPlotLength()} feet long.");
 
                 break;
 
             case 2: //Add a plant
 
-                Console.WriteLine("What is your plant's name?");
+                Console.WriteLine("\nWhat is your plant's name?");
                 string name = Console.ReadLine();
 
                 Console.WriteLine("Please give a brief description");
@@ -83,7 +83,7 @@ public class Menu
                 break;
             case 3: //Remove plant
 
-                Console.WriteLine("What is the name of the plant you wish to remove?");
+                Console.WriteLine("\nWhat is the name of the plant you wish to remove?");
                 string plantName = Console.ReadLine();
                 newPlot.RemovePlant(plantName);
 

@@ -57,7 +57,7 @@ public class Plot
     public void RemovePlant(string plantName)
     {
         //Get index of plant to remove (so array isn't changed during loop)
-        int index = 0;
+        int index = -1;
         for (int i = 0; i < _plants.Count(); i++)
         {
             if (_plants[i].GetName().ToLower() == plantName.ToLower())
@@ -66,24 +66,28 @@ public class Plot
             } else
             {
                 Console.WriteLine("Could not remove. Plant is not in the plot.");
+                break;
             }
         }
 
         //remove the plant
-        _plants.Remove(_plants[index]);
-        DisplayPlot();
+        if (index != -1) {
+            _plants.Remove(_plants[index]);
+            DisplayPlot();
+        }
     }
 
-    //TODO: Format string style plot display
+    //Format string style plot display
     public void DisplayPlot()
     {
-        
+        Console.WriteLine("\nYour plot:\n");
 
         foreach(Plant plant in _plants)
         {
-            Console.WriteLine(plant.GetName());
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine(String.Format(("| {0, 4}   | {1, 4}   | {2, 4}   | {3, 4}   |"), plant.GetInitial().ToUpper(), plant.GetInitial().ToUpper(), plant.GetInitial().ToUpper(), plant.GetInitial().ToUpper()));
         }
-
+        Console.WriteLine("-------------------------------------");
         
     }
 }

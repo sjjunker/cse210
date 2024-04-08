@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to Garden Plot Planner!");
+        Console.WriteLine("\nWelcome to Garden Plot Planner!");
 
         Menu newMenu = new Menu();
         newMenu.DisplayMenu();
