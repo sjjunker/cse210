@@ -16,6 +16,6 @@ public class Perennial : Plant
 
     public override string PlantString()
     {
-        return $"Perennial|{_name}|{_description}|{_initial}|{_harvestSeason}|{_yearLifeSpan}";
+        return $"perennial|{_name}|{_description}|{_initial}|{_harvestSeason}|{_yearLifeSpan}";
     }
 }

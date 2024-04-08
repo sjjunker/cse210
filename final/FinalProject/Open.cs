@@ -22,7 +22,7 @@ public class Open
 
             if (parts[0] == "annual")
             {
-                Annual newAnnual = new Annual(parts[1], int.Parse(parts[2]), parts[3], parts[4]);
+                Annual newAnnual = new Annual(parts[1], parts[2], parts[4], int.Parse(parts[5]));
                 _plants.Add(newAnnual);
             }
             else

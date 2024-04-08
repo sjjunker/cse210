@@ -41,7 +41,7 @@ public class Menu
                 Console.WriteLine("\nHow many rows would you like in your garden?");
                 int plotSize = int.Parse(Console.ReadLine());
                 newPlot.SetPlotLength(plotSize);
-                Console.WriteLine($"\nYour plot is 4 feet wide and {newPlot.GetPlotLength()} feet long.");
+                Console.WriteLine($"Your plot is 4 feet wide and {newPlot.GetPlotLength()} feet long.");
 
                 break;
 
@@ -64,7 +64,7 @@ public class Menu
                     Console.WriteLine("How many days until it can be harvested?");
                     int daysToHarvest = int.Parse(Console.ReadLine());
 
-                    Annual newAnnual = new Annual(plantingSeason, daysToHarvest, name, description);
+                    Annual newAnnual = new Annual(name, description, plantingSeason, daysToHarvest);
 
                     newPlot.AddPlant(newAnnual);
                 }

@@ -1,3 +1,6 @@
-Perennial|broccoli|green thing|b|fall|120
-Perennial|asparagus|green thing 2|a|spring|8
-Annual|tomato|red and juicy|t|spring|60
+annual|tomato|red and juicy|t|spring|60
+annual|cucumber|long and green|c|summer|90
+annual|corn|yellow juicy grain on a cob|c|summer|90
+annual|basil|licorice tasting herb|b|any|30
+perennial|asparagus|edible grass|a|spring|8
+perennial|strawberry|delicious red berry|s|spring|5

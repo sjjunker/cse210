@@ -3,7 +3,7 @@ public class Annual : Plant
     private string _plantingSeason;
     private int _daysToHarvest;
 
-    public Annual(string plantingSeason, int daysToHarvest, string name, string description) : base(name, description)
+    public Annual(string name, string description, string plantingSeason, int daysToHarvest) : base(name, description)
     {
         _plantingSeason = plantingSeason;
         _daysToHarvest = daysToHarvest;
@@ -16,6 +16,6 @@ public class Annual : Plant
 
     public override string PlantString()
     {
-        return $"Annual|{_name}|{_description}|{_initial}|{_plantingSeason}|{_daysToHarvest}";
+        return $"annual|{_name}|{_description}|{_initial}|{_plantingSeason}|{_daysToHarvest}";
     }
 }
