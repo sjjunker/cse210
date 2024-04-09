@@ -65,6 +65,7 @@ public class Plot
             if (_plants[i].GetName().ToLower() == plantName.ToLower())
             {
                 index = i;
+                break;
             }
             else
             {
